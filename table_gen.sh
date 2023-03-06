@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
-echo ""
-echo "I can produce multiplication tables for you. "
-echo " What multiplication table would you like to see?"
-read -p "Enter a number: " users_number
+users_number=$1
+
+if [[ -z $users_number ]]
+then
+    echo ""
+    echo "I can produce multiplication tables for you. "
+    echo " What multiplication table would you like to see?"
+    read -p "Enter a number: " users_number
+fi
 
 # error out if user does not provide a whole number
 re='^[0-9]+$'
